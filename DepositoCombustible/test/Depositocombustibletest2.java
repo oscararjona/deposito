@@ -32,10 +32,10 @@ public  Depositocombustibletest2(double nivel,double capacidad, double cantidada
 	@Parameters
 	public static Collection<Object[]> numeros(){
 	return (Collection<Object[]>) Arrays.asList (new Object[][]{
-	{20,120,20,0,0}  //inicial 20 , capacidad 120, consumo 20, lleno 0, resultado quedan 0
-	,{120,120,20,0,100}
-	,{0,60,0,50,50}
-	,{100,100,80,0,20}
+	{130,130,20,110,110}  //inicial 20 , capacidad 120, consumo 20, lleno 0, resultado quedan 0
+	,{120,120,20,100,100}
+	,{60,60,10,50,50}
+	,{100,100,80,20,20}
 	});
 	
 	
@@ -44,13 +44,13 @@ public  Depositocombustibletest2(double nivel,double capacidad, double cantidada
 	public void testParemetrosConsumir() {
 	DepositoCombustible sc = new DepositoCombustible(nivelinicial,nivelmaximo);
 	sc.consumir(cantidad);
-	assertEquals(retirarcombustible,sc.getDepositoNivel());
+	assertEquals(retirarcombustible,sc.getDepositoNivel(),1);
 	}
 	@Test
 	public void testParemetrosllenar() {
 	DepositoCombustible sc = new DepositoCombustible(nivelinicial,nivelmaximo);
 	sc.consumir(cantidad);
-	assertEquals(añadircombustible,sc.getDepositoNivel());
+	assertEquals(añadircombustible,sc.getDepositoNivel(),1);
 	
 	}}
 
